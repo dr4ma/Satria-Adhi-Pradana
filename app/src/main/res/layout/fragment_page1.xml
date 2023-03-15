@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".presentation.fragments.page1.Page1Fragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/burger"
+                android:layout_width="@dimen/burger_size"
+                android:layout_height="@dimen/burger_size"
+                android:layout_marginBottom="1dp"
+                android:src="@drawable/ic_burger"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/photo_profile_page1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/header_page1_style"
+                    android:text="@string/trade_by" />
+
+                <TextView
+                    style="@style/header_page1_style"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/bata"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/photo_profile_page1"
+                android:layout_width="@dimen/photo_page1_size"
+                android:layout_height="@dimen/photo_page1_size"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="@dimen/btn_from_screen_margin"
+                android:src="@drawable/default_photo"
+                app:civ_border_color="@color/colorBorderImagePage1"
+                app:civ_border_width="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/photo_profile_page1"
+                app:layout_constraintStart_toStartOf="@id/photo_profile_page1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/location"
+                    android:textColor="@color/colorLocation"
+                    android:textSize="11sp" />
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="8dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/ic_down_arrow" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/search_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+               app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_const"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="@dimen/search_start_end_margin"
+                    android:layout_marginEnd="@dimen/search_start_end_margin"
+                    android:background="@drawable/rounded_edit_text"
+                    android:backgroundTint="@color/colorSearch"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/search"
+                        style="@style/search_page1_style"
+                        android:hint="@string/what_are_you_looking_for"
+                        android:textColorHint="@color/colorLocation"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/search_icon"
+                        android:layout_width="@dimen/search_icon_size"
+                        android:layout_height="@dimen/search_icon_size"
+                        android:layout_marginEnd="17dp"
+                        android:src="@drawable/ic_search"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categoriesRecycler"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_from_page1_screen"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/search_const"
+                    tools:listitem="@layout/category_item_recycler" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/latest_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_from_page1_screen"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/search_box">
+
+                <TextView
+                    android:id="@+id/latest_label"
+                    style="@style/profile_header_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/latest"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_from_page1_screen"
+                    android:text="@string/view_all"
+                    android:textColor="@color/colorSmallLabelColor"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/latestRecycler"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_latest_recycler"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/latest_label"
+                    tools:listitem="@layout/latest_item_recycler" />
+
+                <ProgressBar
+                    android:id="@+id/latest_progress"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:indeterminateTint="@color/colorPrimary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/latestRecycler"
+                    app:layout_constraintBottom_toBottomOf="@id/latestRecycler"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/margin_from_page1_screen"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/flash_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_from_page1_screen"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/latest_box">
+
+                <TextView
+                    android:id="@+id/flash_sale_label"
+                    style="@style/profile_header_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/flash_sale"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_from_page1_screen"
+                    android:text="@string/view_all"
+                    android:textColor="@color/colorSmallLabelColor"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/flashSaleRecycler"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_flash_recycler"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:layout_marginBottom="90dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/flash_sale_label"
+                    tools:listitem="@layout/flash_sale_item_recycler" />
+
+                <ProgressBar
+                    android:id="@+id/flash_sales_progress"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:indeterminateTint="@color/colorPrimary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/flashSaleRecycler"
+                    app:layout_constraintBottom_toBottomOf="@id/flashSaleRecycler"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/margin_from_page1_screen"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/wordsRecycler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/search_start_end_margin"
+                android:layout_marginEnd="@dimen/search_start_end_margin"
+                android:background="@drawable/rounded_edit_text"
+                android:backgroundTint="@color/colorSearch"
+                app:layout_constraintStart_toStartOf="@id/search_box"
+                app:layout_constraintTop_toTopOf="@id/search_box"
+                app:layout_constraintEnd_toEndOf="@id/search_box"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

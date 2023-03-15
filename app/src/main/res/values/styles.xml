@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="login_edit_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_edit_text_login</item>
+        <item name="android:backgroundTint">@color/colorEditText</item>
+        <item name="android:background">@drawable/rounded_edit_text</item>
+        <item name="android:textColor">@color/colorEditTextFont</item>
+        <item name="android:textColorHint">@color/colorEditTextFont</item>
+        <item name="android:textSize">@dimen/login_text_size</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="login_btn_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/login_btn_height</item>
+        <item name="android:layout_marginStart">@dimen/btn_from_screen_margin</item>
+        <item name="android:layout_marginEnd">@dimen/btn_from_screen_margin</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
+    <style name="profile_btn_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/login_btn_height</item>
+        <item name="android:layout_marginStart">@dimen/btn_from_screen_margin</item>
+        <item name="android:layout_marginEnd">@dimen/btn_from_screen_margin</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="account_label_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">40dp</item>
+        <item name="android:textColor">@color/colorSmallLabelColor</item>
+        <item name="android:textSize">@dimen/login_text_size</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:layout_marginTop">@dimen/small_margin</item>
+    </style>
+
+    <style name="sign_in_with_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginStart">@dimen/small_margin</item>
+    </style>
+
+    <style name="login_header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/header_text_size</item>
+        <item name="android:textColor">@color/colorSignIn</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="profile_header_style">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textColor">@color/colorProfileName</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
+    <style name="profile_photo_label_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorSmallLabelColor</item>
+        <item name="android:textSize">@dimen/change_photo_text_size</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="image_view_profile_style">
+        <item name="android:layout_width">@dimen/backgrounds_profile_size</item>
+        <item name="android:layout_height">@dimen/backgrounds_profile_size</item>
+        <item name="android:background">@drawable/item_card_profile_style</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <style name="text_profile_box_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorProfileLabels</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
+    <style name="right_arrow_profile_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/right_arrow_margin</item>
+    </style>
+
+    <style name="header_page1_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="search_page1_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/rounded_edit_text</item>
+        <item name="android:backgroundTint">@color/colorSearch</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorLocation</item>
+        <item name="android:textSize">@dimen/change_photo_text_size</item>
+        <item name="android:paddingStart">@dimen/padding_search</item>
+        <item name="android:paddingEnd">@dimen/padding_search</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:lines">1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="theme_search_view">
+        <item name="android:textSize">@dimen/change_photo_text_size</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:gravity">center</item>
+        <item name="android:queryHint">@string/what_are_you_looking_for</item>
+        <item name="android:textColor">@color/colorLocation</item>
+        <item name="android:textColorHint">@color/colorLocation</item>
+        <item name="android:queryBackground">@android:color/transparent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="details_small_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/colorSmallLabelColor</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="color_btn_style">
+        <item name="android:layout_width">@dimen/width_color_details</item>
+        <item name="android:layout_height">@dimen/height_color_details</item>
+        <item name="android:layout_marginEnd">@dimen/margin_color</item>
+        <item name="android:backgroundTint">@color/colorWhite</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="card_plus_minus_style">
+        <item name="android:layout_width">43dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+    </style>
+</resources>

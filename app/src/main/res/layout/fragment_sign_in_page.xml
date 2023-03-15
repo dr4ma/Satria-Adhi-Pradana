@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".presentation.fragments.signInPage.SignInPageFragment">
+
+    <TextView
+        style="@style/login_header"
+        android:text="@string/sign_in"
+        app:layout_constraintBottom_toTopOf="@id/fields_box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fields_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="@dimen/extra_large_margin"
+        app:layout_constraintTop_toTopOf="@id/box_guide_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/first_name"
+            style="@style/login_edit_text_style"
+            android:hint="@string/first_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/last_name"
+            style="@style/login_edit_text_style"
+            android:layout_marginTop="@dimen/extra_large_margin"
+            android:hint="@string/last_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/first_name" />
+
+        <EditText
+            android:id="@+id/email"
+            style="@style/login_edit_text_style"
+            android:layout_marginTop="@dimen/extra_large_margin"
+            android:hint="@string/email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/last_name" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_in"
+        style="@style/login_btn_style"
+        android:text="@string/sign_in"
+        app:cornerRadius="@dimen/login_btn_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_guide_line" />
+
+    <TextView
+        android:id="@+id/account_label"
+        style="@style/account_label_style"
+        android:text="@string/already_have_an_account"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sign_in" />
+
+    <TextView
+        android:id="@+id/account_login"
+        style="@style/account_label_style"
+        android:layout_marginStart="@dimen/small_margin"
+        android:text="@string/login"
+        android:textColor="@color/colorReference"
+        app:layout_constraintStart_toEndOf="@id/account_label"
+        app:layout_constraintTop_toBottomOf="@id/sign_in" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account_login">
+
+        <ImageView
+            android:id="@+id/google_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/google_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/sign_in_with_style"
+            android:text="@string/sign_in_with_google"
+            app:layout_constraintBottom_toBottomOf="@id/google_ic"
+            app:layout_constraintStart_toEndOf="@id/google_ic"
+            app:layout_constraintTop_toTopOf="@id/google_ic" />
+
+        <ImageView
+            android:id="@+id/apple_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_large_margin"
+            android:src="@drawable/apple_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/google_ic" />
+
+        <TextView
+            style="@style/sign_in_with_style"
+            android:text="@string/sign_in_with_apple"
+            app:layout_constraintBottom_toBottomOf="@id/apple_ic"
+            app:layout_constraintStart_toEndOf="@id/apple_ic"
+            app:layout_constraintTop_toTopOf="@id/apple_ic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/btn_guide_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/box_guide_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
