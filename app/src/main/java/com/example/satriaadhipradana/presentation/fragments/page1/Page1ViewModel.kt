@@ -7,9 +7,7 @@ import com.example.domain.models.FlashSaleModel
 import com.example.domain.models.LatestModel
 import com.example.domain.usecases.Page1UseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -28,14 +26,14 @@ class Page1ViewModel @Inject constructor(private val page1UseCase: Page1UseCase)
     fun getPage1Info() {
         getLatest() { latest ->
             getFlashSale() { flashSale ->
-                _latestList.value = latest
-                _flashSale.value = flashSale
+                _latestList.postValue(latest)
+                _flashSale.postValue(flashSale)
             }
         }
     }
 
     private fun getLatest(onSuccess: (MutableList<LatestModel>) -> Unit) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             page1UseCase.getLatest().collect { latestList ->
                 if (latestList.isNotEmpty() && latestList != _latestList.value) {
                     onSuccess(latestList)
@@ -45,7 +43,7 @@ class Page1ViewModel @Inject constructor(private val page1UseCase: Page1UseCase)
     }
 
     private fun getFlashSale(onSuccess: (MutableList<FlashSaleModel>) -> Unit) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             page1UseCase.getFlashSale().collect { flashSaleList ->
                 if (flashSaleList.isNotEmpty() && flashSaleList != _latestList.value) {
                     onSuccess(flashSaleList)

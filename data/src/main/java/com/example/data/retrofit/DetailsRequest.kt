@@ -4,11 +4,12 @@ import android.util.Log
 import com.example.data.utills.FLASH_SALE_REQUEST_TAG
 import com.example.domain.models.DetailsModel
 import com.example.domain.repository.DetailsRepository
+import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.launch
+import kotlin.coroutines.coroutineContext
 
 class DetailsRequest : DetailsRepository {
 

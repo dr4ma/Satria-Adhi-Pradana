@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.domain.models.DetailsModel
 import com.example.domain.usecases.DetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,7 +17,7 @@ class DetailsViewModel @Inject constructor(private val detailsUseCase: DetailsUs
     val details = _details
 
     fun getDetails(){
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             detailsUseCase.getDetails().collect{ details ->
                 _details.postValue(details)
             }
