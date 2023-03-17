@@ -32,7 +32,7 @@ class Page1ViewModel @Inject constructor(private val page1UseCase: Page1UseCase)
         }
     }
 
-    private fun getLatest(onSuccess: (MutableList<LatestModel>) -> Unit) {
+    private inline fun getLatest(crossinline onSuccess: (MutableList<LatestModel>) -> Unit) {
         viewModelScope.launch(Dispatchers.IO) {
             page1UseCase.getLatest().collect { latestList ->
                 if (latestList.isNotEmpty() && latestList != _latestList.value) {
@@ -42,7 +42,7 @@ class Page1ViewModel @Inject constructor(private val page1UseCase: Page1UseCase)
         }
     }
 
-    private fun getFlashSale(onSuccess: (MutableList<FlashSaleModel>) -> Unit) {
+    private inline fun getFlashSale(crossinline onSuccess: (MutableList<FlashSaleModel>) -> Unit) {
         viewModelScope.launch(Dispatchers.IO) {
             page1UseCase.getFlashSale().collect { flashSaleList ->
                 if (flashSaleList.isNotEmpty() && flashSaleList != _latestList.value) {

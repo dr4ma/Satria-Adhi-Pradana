@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.domain.models.UserModel
+import com.example.domain.usecases.UserUseCase
 import com.example.domain.utills.RealmState
 import com.example.satriaadhipradana.R
 import com.example.satriaadhipradana.databinding.FragmentSignInPageBinding
@@ -61,15 +62,14 @@ class SignInPageFragment : Fragment() {
                 }
                 else{
                     if(email.text.toString() != mUserModel.email){
-                        mViewModel.insertOrUpdateUserModel(firstName.text.toString(), lastName.text.toString(), email.text.toString()){ state ->
-                            if(state == RealmState.SUCCESS){
-                                AppPreferences.rememberUserInSystem(true)
-                                findNavController().navigate(R.id.action_signInPageFragment_to_page1Fragment)
-                            }
-                            else{
-                                showSnackBarError(firstName, getString(R.string.error_save_data), context)
-                            }
-                        }
+
+                        mViewModel.insertOrUpdateUserModel(firstName.text.toString(), lastName.text.toString(), email.text.toString(), {
+                            AppPreferences.rememberUserInSystem(true)
+                            findNavController().navigate(R.id.action_signInPageFragment_to_page1Fragment)
+
+                        }, {
+                            showSnackBarError(firstName, getString(R.string.error_save_data), context)
+                        })
                     }
                     else{
                         showSnackBarError(firstName, getString(R.string.user_exist), context)

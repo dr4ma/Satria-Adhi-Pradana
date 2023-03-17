@@ -8,15 +8,20 @@ import io.realm.Realm
 
 class UserRequests(private val realm: Realm) : UserRepository {
 
-    override fun insertOrUpdateUserModel(model: UserModelRealm, function: (state : RealmState) -> Unit) {
+    override fun insertOrUpdateUserModel(
+        model: UserModelRealm,
+        onSuccess: () -> Unit,
+        onError: () -> Unit
+    ) {
         realm.executeTransactionAsync({ transition ->
-            transition.insertOrUpdate(model)
-        }, { function(RealmState.SUCCESS) }, RealmErrorCallback(realm) { function(RealmState.ERROR) })
+            transition.insertOrUpdate(model) }, {
+                onSuccess() }, RealmErrorCallback(realm) {
+                onError() })
     }
 
     override fun getUserModel(function: (UserModelRealm) -> Unit) {
         realm.executeTransactionAsync({ transition ->
             function(transition.where(UserModelRealm::class.java).findFirst() ?: UserModelRealm())
-        }, RealmErrorCallback(realm){})
+        }, RealmErrorCallback(realm) {})
     }
 }

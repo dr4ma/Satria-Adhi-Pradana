@@ -1,5 +1,6 @@
 package com.example.satriaadhipradana.presentation.fragments.details
 
+import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

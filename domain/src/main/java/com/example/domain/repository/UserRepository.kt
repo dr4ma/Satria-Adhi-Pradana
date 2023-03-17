@@ -5,7 +5,7 @@ import com.example.domain.utills.RealmState
 
 interface UserRepository {
 
-    fun insertOrUpdateUserModel(model : UserModelRealm, function:(state : RealmState) -> Unit)
+    fun insertOrUpdateUserModel(model : UserModelRealm, onSuccess:() -> Unit, onError:() -> Unit)
 
     fun getUserModel(function:(UserModelRealm) -> Unit)
 }

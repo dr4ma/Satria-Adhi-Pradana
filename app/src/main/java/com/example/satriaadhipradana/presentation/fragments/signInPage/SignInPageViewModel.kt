@@ -24,9 +24,11 @@ class SignInPageViewModel @Inject constructor(private val userUseCase: UserUseCa
         }
     }
 
-    fun insertOrUpdateUserModel(firstName: String, lastName: String, email: String, function: (RealmState) -> Unit) {
-        userUseCase.insertOrUpdateUserModel(UserModel(id = 0, firstName = firstName, lastName = lastName, email = email)) {
-            function(it)
-        }
+    fun insertOrUpdateUserModel(firstName: String, lastName: String, email: String, onSuccess: () -> Unit, onError:() -> Unit) {
+        userUseCase.insertOrUpdateUserModel(UserModel(id = 0, firstName = firstName, lastName = lastName, email = email), {
+            onSuccess()
+        }, {
+            onError()
+        })
     }
 }
